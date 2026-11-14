@@ -1,6 +1,6 @@
 # Sprint 03 — Blocker Resolution and Task Ownership
 
-**Status:** Product requirements confirmed; UX specification proposed; implementation unverified  
+**Status:** Low-fidelity interactive prototype; five user-reported manual workflow checks passed; broader behavior unverified  
 **Project:** WorkAtlas (independent portfolio prototype)  
 **Date:** 14 November 2026
 
@@ -15,7 +15,7 @@ WorkAtlas Sprint 02 makes blocked work visible. Sprint 03 explores how a team ca
 - WorkAtlas retains one shared task collection; My Day is filtered by assignee.
 - The Activity view should make changes attributable to the person who performed them.
 
-## Proposed role permissions (not implemented or tested)
+## Proposed role permissions (not comprehensively tested)
 | Action | Contributor | Team lead |
 | --- | --- | --- |
 | View shared tasks | Yes | Yes |
@@ -28,7 +28,7 @@ WorkAtlas Sprint 02 makes blocked work visible. Sprint 03 explores how a team ca
 
 Actual role identities, authentication, and authorization enforcement remain unspecified.
 
-## Primary proposed journey
+## Primary journey (manually checked in Sprint 03)
 1. Contributor opens an assigned task, records a blocker explanation, and sets status to Blocked.
 2. Team lead identifies the blocked task in Work Board.
 3. Team lead reviews its context and records a response or next action.
@@ -55,7 +55,7 @@ Actual role identities, authentication, and authorization enforcement remain uns
 
 These are proposed fields, not a claim about the current data schema.
 
-## Edge cases to design before implementation
+## Edge cases requiring additional verification
 1. Team lead reassigns a Blocked task without resolving the blocker.
 2. Team lead changes both assignee and status in one edit.
 3. A contributor opens a task that has been reassigned away from them.
@@ -63,7 +63,7 @@ These are proposed fields, not a claim about the current data schema.
 5. Two people edit the same task concurrently (not supported by the current demo; do not imply conflict resolution exists).
 6. An empty or missing blocker explanation (validation rule to decide).
 
-## Acceptance criteria for a future prototype
+## Acceptance criteria and remaining coverage
 - Team lead can change another contributor's task status.
 - Team lead can reassign a task to a different contributor.
 - Reassignment moves the task between the relevant My Day views without duplicating it.
@@ -73,12 +73,24 @@ These are proposed fields, not a claim about the current data schema.
 - Contributor cannot perform unauthorized reassignment in the proposed role-based UI.
 - Existing Sprint 02 filtering and status synchronization continue to work.
 
-## Evidence boundaries
+## Sprint 03 manual verification — user report
+The user reported **Passed** for all five test assignments in the existing Figma Make prototype:
+
+| Assignment | Reported result | Scope |
+| --- | --- | --- |
+| 01 — Report a blocker | Passed | Contributor reports blocker on assigned task |
+| 02 — Review the blocker | Passed | Team lead reviews blocker context |
+| 03 — Reassign ownership | Passed | Team lead reassigns task |
+| 04 — Verify shared state | Passed | Ownership reflected in relevant shared task views |
+| 05 — Verify audit trail | Passed | Changes and prior blocker context reflected in activity history |
+
+Screenshots supplied during the review show a Blocked task, blocker explanation, lead response, reassignment history, distinct contributor/lead identities, and the same existing WorkAtlas app shell. The complete before/after state for each test was not independently inspected in code; the five pass results are user-reported manual checks, not automated test results.
+
 **Verified in Sprint 02 (manual user checks):** blocked-task reason display in Needs attention; Assigned to me filter; status updates synchronized to Work Board and Activity; mobile layout usable.
 
-**Not verified:** role-based permissions, reassignment, blocker-response workflow, audit-field completeness, notifications, concurrency, security, production multi-user synchronization, formal usability outcomes.
+**Not yet verified:** comprehensive role restrictions (including attempts by contributors to reassign), combined status-and-assignee edits, validation of empty blocker explanations, persistence after reload, all audit-event fields in every case, concurrent editing, security, notifications, production multi-user synchronization, formal usability outcomes, or business impact.
 
 ## Next milestone
-Create a low-fidelity, end-to-end interaction specification for **Blocked task → lead review → reassign or update → contributor sees change → Activity records actor**, then test one synthetic scenario before spending Figma Make credits on broader UI work.
+Document a concise **interaction and state-transition map** for the tested blocker-to-reassignment journey, then perform targeted edge-case checks (especially contributor reassignment restrictions, simultaneous edits, and reload persistence). Preserve the existing Figma Make project and avoid further generation until a specific failure or design gap warrants a narrowly scoped change.
 
 No confidential employer data, designs, screenshots, or source code should be included.
