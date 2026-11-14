@@ -88,14 +88,16 @@ Screenshots supplied during the review show a Blocked task, blocker explanation,
 
 **Verified in Sprint 02 (manual user checks):** blocked-task reason display in Needs attention; Assigned to me filter; status updates synchronized to Work Board and Activity; mobile layout usable.
 
-**Not yet verified:** comprehensive role restrictions beyond the tested contributor reassignment scenario, combined status-and-assignee edits, validation of empty blocker explanations, persistence after reload, all audit-event fields in every case, concurrent editing, security, notifications, production multi-user synchronization, formal usability outcomes, or business impact.
+**Not yet verified:** comprehensive role restrictions beyond the tested contributor reassignment scenario, other combined status-and-assignee edit combinations, validation of empty blocker explanations, persistence after reload, all audit-event fields in every case, concurrent editing, security, notifications, production multi-user synchronization, formal usability outcomes, or business impact.
 
 ## Sprint 04 — Permission boundary verification
 **Assignment 01: Passed (user-reported manual check, 14 November 2026).** In the existing Figma Make prototype, the user tested the Individual Contributor role and reported that reassignment was unavailable and no reassignment was saved. This supports the intended UI-level restriction for the tested scenario only. It does **not** verify backend authorization, bypass resistance, other role restrictions, or security controls. No new Figma Make generation was needed.
 
-**Next untested case:** Team Lead changes both status and assignee in a single save; verify shared views and actor-attributed Activity entries.
+**Assignment 02: Passed (user-reported manual check, 14 November 2026).** The user reported that a Team Lead changed both task status and assignee in one save. Work Board and the new assignee's My Day reflected the changes, and Activity recorded the update correctly. This verifies one combined-update prototype scenario, not atomic database transactions or exhaustive combinations.
+
+**Next untested case:** Reload persistence of a saved task change and its Activity history.
 
 ## Next milestone
-Document a concise **interaction and state-transition map** for the tested blocker-to-reassignment journey, then perform targeted edge-case checks (especially simultaneous status-and-assignee edits and reload persistence). Preserve the existing Figma Make project and avoid further generation until a specific failure or design gap warrants a narrowly scoped change.
+Document a concise **interaction and state-transition map** for the tested blocker-to-reassignment journey, then perform targeted edge-case checks (especially reload persistence and empty blocker explanation validation). Preserve the existing Figma Make project and avoid further generation until a specific failure or design gap warrants a narrowly scoped change.
 
 No confidential employer data, designs, screenshots, or source code should be included.
