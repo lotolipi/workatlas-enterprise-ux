@@ -44,7 +44,7 @@ A six-frame visual case study was prepared:
 5. **Defect resolution** — ownership boundary and correction
 6. **Evidence and reflection** — manual checks, capabilities, limitations
 
-The presentation exports are maintained separately; visual assets will be linked here once uploaded to this repository.
+**Presentation exports:** [View the final case-study PDF](https://drive.google.com/file/d/1NoUbkEXO_CdjAVZ4ICjQ5VlyUZc6iS_Z/view) · [View/download the six-frame PNG export ZIP](https://drive.google.com/file/d/1ZQUW4DRGkSy2FIiUbKQWMeeOwhLmPy0M/view). These files are hosted in Google Drive, not yet committed as binary assets to GitHub. Access depends on the Drive files' sharing permissions.
 
 ## Project status
 
