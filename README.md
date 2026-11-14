@@ -1,37 +1,57 @@
 # WorkAtlas
+### Making shared work visible, actionable, and accountable
 
-### Making complex team workflows feel clear.
+**Independent enterprise product-design case study · Interactive responsive prototype · Synthetic data**
 
-WorkAtlas is an independent enterprise UX exploration focused on improving visibility, coordination, and clarity across team workflows.
+WorkAtlas explores a role-aware task workspace that connects **My Day**, **Work Board**, **Projects**, and **Activity** around a shared task collection. The design question is not simply whether work is visible, but whether responsibility, intervention, and changes remain understandable as tasks move between people.
 
-## The Problem
+> **Evidence boundary:** WorkAtlas is an independent portfolio exploration using fictional people, tasks, and scenarios. It is not an employer product, production deployment, or validated business outcome. No confidential employer materials are included.
 
-Teams often manage work across disconnected tools, making it difficult to understand priorities, ownership, and progress. WorkAtlas explores how a unified workspace might make these workflows easier to navigate.
+## The problem
 
-## Project Goals
+A shared board can show progress without clarifying what happens when a task is blocked, reassigned, or updated by a team lead. WorkAtlas frames four design concerns: **visibility, ownership, intervention, and accountability**. This framing is a design hypothesis, **not a finding from formal user research**.
 
-- Explore clearer work and project visibility
-- Design intuitive task-management workflows
-- Develop reusable interface patterns
-- Build an interactive, responsive prototype
+## What I designed
 
-## Current Status
+- **Connected information architecture:** One shared task collection presented through My Day, Work Board, Projects, and Activity.
+- **Role-aware interactions:** Contributors can report blockers and update their own assigned task status; team leads can intervene, update statuses, and reassign work in the tested prototype scenarios.
+- **Blocker-to-intervention journey:** Report a blocker → review context → intervene/reassign → synchronize views → trace changes in Activity.
+- **Edge-case iteration:** A former assignee was initially able to change task status after reassignment. A focused prototype correction restricted the edit and rejected saving in the tested scenario.
 
-**Phase 01 — Discovery and product definition**
+## Evidence from manual prototype checks
 
-This project is in development. Product concepts and proposed solutions are not presented as validated outcomes.
+| Sprint | Recorded results | Scope |
+| --- | --- | --- |
+| 02 | 3 manual checks passed | Earlier task visibility and synchronization checks |
+| 03 | 5 manual checks passed | Blocker reporting, lead review, reassignment, shared state, activity trail |
+| 04 | 4 checks initially passed; 1 initially failed | Former assignee could save a status change after reassignment |
+| 04 follow-up | Tested former-assignee save restriction corrected; lead reassignment retested successfully | Scenario-specific user-reported manual checks |
 
-## Design Process
+These counts are **not** participant counts, automated test results, usability metrics, or business impact. See [Sprint 03 blocker resolution and Sprint 04 verification](docs/SPRINT_03_BLOCKER_RESOLUTION.md) for the underlying decision log, observations, corrections, and unverified cases.
 
-1. Problem framing
-2. User and workflow definition
-3. Information architecture
-4. Wireframing and interaction design
-5. Prototyping and evaluation
-6. Iteration and documentation
+## What remains unverified
 
-## About
+Formal usability research, real-world adoption, business impact, production authentication and authorization, comprehensive security testing, concurrent editing, cross-device persistence, and exhaustive regression coverage. In particular, post-fix Activity behavior after a rejected edit and current-assignee status editing were not separately confirmed.
 
-Created by Shilpi Mishra (Lotolipi).
+## Case-study presentation
 
-This is an independent portfolio project using fictional scenarios and synthetic data. It does not include confidential employer materials.
+A six-frame visual case study was prepared:
+
+1. **Overview** — concept and connected workspace
+2. **Problem framing** — visibility versus actionability
+3. **System architecture** — shared data, different perspectives, roles
+4. **Primary workflow** — blocker-to-intervention journey
+5. **Defect resolution** — ownership boundary and correction
+6. **Evidence and reflection** — manual checks, capabilities, limitations
+
+The presentation exports are maintained separately; visual assets will be linked here once uploaded to this repository.
+
+## Project status
+
+**Interactive prototype and case-study presentation completed for the documented scenarios; further validation remains open.** This is a portfolio prototype, not a shipped product.
+
+## Design approach
+
+Problem framing → information architecture → role and workflow modeling → interactive prototyping → manual scenario checks → defect correction → evidence-grounded reflection.
+
+**Created by Shilpi Mishra (Lotolipi).**
