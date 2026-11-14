@@ -99,9 +99,13 @@ Screenshots supplied during the review show a Blocked task, blocker explanation,
 
 **Assignment 04: Passed (user-reported manual check, 14 November 2026).** With the blocker explanation empty, the prototype prevented submission; the task status remained unchanged and no blocker event was added to Activity. This verifies the empty-field case in the tested prototype, not whitespace-only input, other validation paths, or backend enforcement.
 
-**Next untested case:** After a task has been reassigned away from a contributor, verify that the former assignee no longer has an actionable task in My Day and cannot edit it through a previously open task view.
+**Assignment 05: Passed (user-reported manual check, 14 November 2026).** The user reported that the former assignee could not modify a task after reassignment. This supports the tested prototype's former-assignee editing restriction; the report does not separately establish behavior of every entry point, stale open sessions, or backend enforcement.
+
+**Sprint 04 summary:** All five assigned manual checks were reported Passed. These are scenario-specific prototype checks, not automated tests, comprehensive role/security verification, or measured usability outcomes.
+
+**Next untested case:** Submit a blocker explanation containing only spaces; determine whether the form treats whitespace-only text as empty and leaves task state and Activity unchanged.
 
 ## Next milestone
-Document a concise **interaction and state-transition map** for the tested blocker-to-reassignment journey, then perform targeted edge-case checks (especially stale-task access after reassignment and persistence beyond a single refresh). Preserve the existing Figma Make project and avoid further generation until a specific failure or design gap warrants a narrowly scoped change.
+Document a concise **interaction and state-transition map** for the tested blocker-to-reassignment journey, then perform targeted edge-case checks (especially whitespace-only blocker validation and persistence beyond a single refresh). Preserve the existing Figma Make project and avoid further generation until a specific failure or design gap warrants a narrowly scoped change.
 
 No confidential employer data, designs, screenshots, or source code should be included.
