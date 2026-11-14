@@ -88,7 +88,7 @@ Screenshots supplied during the review show a Blocked task, blocker explanation,
 
 **Verified in Sprint 02 (manual user checks):** blocked-task reason display in Needs attention; Assigned to me filter; status updates synchronized to Work Board and Activity; mobile layout usable.
 
-**Not yet verified:** comprehensive role restrictions beyond the tested contributor reassignment scenario, other combined status-and-assignee edit combinations, validation of empty blocker explanations, persistence beyond the tested reload scenario, all audit-event fields in every case, concurrent editing, security, notifications, production multi-user synchronization, formal usability outcomes, or business impact.
+**Not yet verified:** comprehensive role restrictions beyond the tested contributor reassignment scenario, other combined status-and-assignee edit combinations, other blocker-input validation cases, persistence beyond the tested reload scenario, all audit-event fields in every case, concurrent editing, security, notifications, production multi-user synchronization, formal usability outcomes, or business impact.
 
 ## Sprint 04 — Permission boundary verification
 **Assignment 01: Passed (user-reported manual check, 14 November 2026).** In the existing Figma Make prototype, the user tested the Individual Contributor role and reported that reassignment was unavailable and no reassignment was saved. This supports the intended UI-level restriction for the tested scenario only. It does **not** verify backend authorization, bypass resistance, other role restrictions, or security controls. No new Figma Make generation was needed.
@@ -97,9 +97,11 @@ Screenshots supplied during the review show a Blocked task, blocker explanation,
 
 **Assignment 03: Passed (user-reported manual check, 14 November 2026).** After refreshing the existing Figma Make preview without resetting demo data, the user reported that the task's saved status, assignee, and Activity history persisted. This verifies persistence through one refresh in the tested environment only; it does not establish cross-browser, cross-device, multi-user, or production storage reliability.
 
-**Next untested case:** Attempt to report a blocker with an empty explanation; verify that the action is prevented and that task status and Activity remain unchanged.
+**Assignment 04: Passed (user-reported manual check, 14 November 2026).** With the blocker explanation empty, the prototype prevented submission; the task status remained unchanged and no blocker event was added to Activity. This verifies the empty-field case in the tested prototype, not whitespace-only input, other validation paths, or backend enforcement.
+
+**Next untested case:** After a task has been reassigned away from a contributor, verify that the former assignee no longer has an actionable task in My Day and cannot edit it through a previously open task view.
 
 ## Next milestone
-Document a concise **interaction and state-transition map** for the tested blocker-to-reassignment journey, then perform targeted edge-case checks (especially empty blocker explanation validation and persistence beyond a single refresh). Preserve the existing Figma Make project and avoid further generation until a specific failure or design gap warrants a narrowly scoped change.
+Document a concise **interaction and state-transition map** for the tested blocker-to-reassignment journey, then perform targeted edge-case checks (especially stale-task access after reassignment and persistence beyond a single refresh). Preserve the existing Figma Make project and avoid further generation until a specific failure or design gap warrants a narrowly scoped change.
 
 No confidential employer data, designs, screenshots, or source code should be included.
