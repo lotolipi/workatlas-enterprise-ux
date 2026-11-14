@@ -99,13 +99,13 @@ Screenshots supplied during the review show a Blocked task, blocker explanation,
 
 **Assignment 04: Passed (user-reported manual check, 14 November 2026).** With the blocker explanation empty, the prototype prevented submission; the task status remained unchanged and no blocker event was added to Activity. This verifies the empty-field case in the tested prototype, not whitespace-only input, other validation paths, or backend enforcement.
 
-**Assignment 05: Passed (user-reported manual check, 14 November 2026).** The user reported that the former assignee could not modify a task after reassignment. This supports the tested prototype's former-assignee editing restriction; the report does not separately establish behavior of every entry point, stale open sessions, or backend enforcement.
+**Assignment 05: Failed (corrected user-reported manual result, 14 November 2026).** The user initially reported Passed but subsequently corrected the result to Failed: a former assignee **can modify** a task after reassignment in the tested prototype. The exact editable field, entry point, whether the modification persisted, and whether Activity recorded it have not yet been established. The earlier Pass is superseded, not evidence of a successful restriction. This is an observed prototype ownership-boundary defect, not a demonstrated production security vulnerability.
 
-**Sprint 04 summary:** All five assigned manual checks were reported Passed. These are scenario-specific prototype checks, not automated tests, comprehensive role/security verification, or measured usability outcomes.
+**Sprint 04 summary (corrected):** Assignments 01–04 Passed; Assignment 05 Failed per the user's latest report. These are scenario-specific prototype checks, not automated tests, comprehensive role/security verification, or measured usability outcomes.
 
-**Next untested case:** Submit a blocker explanation containing only spaces; determine whether the form treats whitespace-only text as empty and leaves task state and Activity unchanged.
+**Next diagnostic:** In Individual Contributor mode as the former assignee, identify which action can still modify the reassigned task (status, blocker, assignee, or another field), and whether the change saves. Defer whitespace-only validation until this ownership defect is characterized.
 
 ## Next milestone
-Document a concise **interaction and state-transition map** for the tested blocker-to-reassignment journey, then perform targeted edge-case checks (especially whitespace-only blocker validation and persistence beyond a single refresh). Preserve the existing Figma Make project and avoid further generation until a specific failure or design gap warrants a narrowly scoped change.
+Document a concise **interaction and state-transition map** for the tested blocker-to-reassignment journey, then diagnose and correct the failed former-assignee editing restriction before lower-priority validation checks. Preserve the existing Figma Make project and avoid further generation until a specific failure or design gap warrants a narrowly scoped change.
 
 No confidential employer data, designs, screenshots, or source code should be included.
