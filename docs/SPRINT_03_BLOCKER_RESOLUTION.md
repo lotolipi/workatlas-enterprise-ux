@@ -109,7 +109,33 @@ Screenshots supplied during the review show a Blocked task, blocker explanation,
 
 **Next verification:** Check that a rejected former-assignee edit creates no Activity event, and separately confirm that the current assignee can still update task status.
 
+
+## Sprint 05 — Ownership integrity regression (user-reported, 20 November 2026)
+
+Two manual regression scenarios were reported as **Passed** in the existing Figma Make prototype. These results were supplied by the designer; no independent automated run, screenshot or implementation-level inspection was supplied for Sprint 05.
+
+| Test | User-reported result | Scenario and intended acceptance |
+| --- | --- | --- |
+| 01 — Rejected edit / Activity integrity | Passed | After reassignment, a former assignee's status-edit attempt is rejected; task state remains unchanged and no new Activity event is created, including the checked refresh scenario |
+| 02 — Current-assignee status editing | Passed | The newly assigned contributor can save a status change; Work Board, My Day and Activity reflect it, including the checked refresh scenario |
+
+**Interpretation:** The two specific post-fix regression gaps identified in Sprint 04 are now closed by user-reported manual passes. No Figma Make correction was requested because neither test failed. This does not establish backend authorization, complete role coverage, concurrency safety, cross-device persistence, automated regression coverage, formal usability validation or production behavior.
+
+### Interaction / state-transition map (documented design intent)
+
+1. Contributor reports a blocker on their assigned task → status becomes Blocked and an attributable blocker event is expected.
+2. Team Lead reviews and may respond, reassign, or deliberately change status → reassignment alone should not change status.
+3. Reassignment changes the current assignee in the shared task collection → My Day follows the new assignee; prior blocker context remains available.
+4. Former assignee attempts to edit status → save must be rejected; no task mutation or new Activity event (Sprint 05 user-reported pass).
+5. Current assignee edits status → permitted save, shared-view update and attributable Activity event (Sprint 05 user-reported pass).
+
+This map expresses intended UX behavior and the bounded manually reported checks; it is **not** a verified database transaction specification.
+
+### Remaining validation
+
+Unverified: alternative role paths and task combinations, concurrent editing, production authorization, cross-browser/device behavior, comprehensive audit-event correctness and real-user outcomes. Preserve the existing Figma Make file; do not generate new UI unless a later concrete defect is reproduced.
+
 ## Next milestone
-Document a concise **interaction and state-transition map** for the tested blocker-to-reassignment journey, then finish regression verification of the former-assignee status-editing correction before lower-priority validation checks. Preserve the existing Figma Make project and avoid further generation until a specific failure or design gap warrants a narrowly scoped change.
+The Sprint 05 interaction/state map and the two targeted regression checks are documented above. Continue only with prioritized future validation or a separate product prototype; do not claim comprehensive permission/security verification. Preserve the existing Figma Make project and avoid further generation until a specific failure or design gap warrants a narrowly scoped change.
 
 No confidential employer data, designs, screenshots, or source code should be included.
