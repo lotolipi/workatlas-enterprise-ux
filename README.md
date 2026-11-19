@@ -26,12 +26,13 @@ A shared board can show progress without clarifying what happens when a task is 
 | 03 | 5 manual checks passed | Blocker reporting, lead review, reassignment, shared state, activity trail |
 | 04 | 4 checks initially passed; 1 initially failed | Former assignee could save a status change after reassignment |
 | 04 follow-up | Tested former-assignee save restriction corrected; lead reassignment retested successfully | Scenario-specific user-reported manual checks |
+| 05 | 2 user-reported regression checks passed | Rejected former-assignee edit left Activity unchanged; current assignee could update task status |
 
 These counts are **not** participant counts, automated test results, usability metrics, or business impact. See [Sprint 03 blocker resolution and Sprint 04 verification](docs/SPRINT_03_BLOCKER_RESOLUTION.md) for the underlying decision log, observations, corrections, and unverified cases.
 
 ## What remains unverified
 
-Formal usability research, real-world adoption, business impact, production authentication and authorization, comprehensive security testing, concurrent editing, cross-device persistence, and exhaustive regression coverage. In particular, post-fix Activity behavior after a rejected edit and current-assignee status editing were not separately confirmed.
+Formal usability research, real-world adoption, business impact, production authentication and authorization, comprehensive security testing, concurrent editing, cross-device persistence, and exhaustive regression coverage. Sprint 05 separately reports passing prototype-level checks for post-fix Activity integrity after a rejected edit and current-assignee status editing. Other roles, paths and environments remain unverified.
 
 ## Case-study presentation
 
