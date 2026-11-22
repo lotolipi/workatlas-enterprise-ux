@@ -107,7 +107,7 @@ Screenshots supplied during the review show a Blocked task, blocker explanation,
 
 **Regression result (user-reported, 14 November 2026):** Team Lead Maya Rao can reassign successfully after the permission fix. The original defect is **resolved for the tested contributor-save restriction and lead-reassignment scenarios**. Not independently verified after the fix: Activity unchanged following rejected edits, and current-assignee status-edit regression.
 
-**Next verification:** Check that a rejected former-assignee edit creates no Activity event, and separately confirm that the current assignee can still update task status.
+**Verification status update (20 November 2026):** These two checks were subsequently reported as Passed in Sprint 05: (1) a rejected former-assignee status edit left task state and Activity unchanged, including after refresh; and (2) the current assignee could save a status update reflected in My Day, Work Board, and Activity, including after refresh. These are user-reported manual prototype results, not independently automated or production-level verification. See the Sprint 05 table below for scope and limitations.
 
 
 ## Sprint 05 — Ownership integrity regression (user-reported, 20 November 2026)
