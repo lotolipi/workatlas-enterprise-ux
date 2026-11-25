@@ -2,6 +2,10 @@
 
 Independent portfolio prototype · Synthetic scenarios · Manual results, not production validation
 
+![Editorial evidence infographic: architecture, workflow, ownership and manual checks](workatlas-editorial.svg)
+
+The editorial plate summarizes the documented scenarios; the detailed diagrams and evidence below remain the source of context.
+
 ## 01 / One task, four perspectives
 
 ```mermaid
