@@ -30,6 +30,10 @@ A shared board can show progress without clarifying what happens when a task is 
 - **Blocker-to-intervention journey:** Report a blocker → review context → intervene/reassign → synchronize views → trace changes in Activity.
 - **Edge-case iteration:** A former assignee was initially able to change task status after reassignment. A focused prototype correction restricted the edit and rejected saving in the tested scenario.
 
+## Visual evidence atlas
+
+[Explore the four visual evidence plates](docs/VISUAL_EVIDENCE.md): connected information architecture, blocker-to-intervention workflow, ownership transitions, and recorded manual validation results. The diagrams explain design intent and bounded prototype evidence, not production behavior.
+
 ## Evidence from manual prototype checks
 
 | Sprint | Recorded results | Scope |
