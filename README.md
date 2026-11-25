@@ -7,6 +7,18 @@ WorkAtlas explores a role-aware task workspace that connects **My Day**, **Work 
 
 > **Evidence boundary:** WorkAtlas is an independent portfolio exploration using fictional people, tasks, and scenarios. It is not an employer product, production deployment, or validated business outcome. No confidential employer materials are included.
 
+## Case study at a glance
+
+WorkAtlas explores how individual contributors and team leads can move beyond tracking work to resolving blockers, understanding ownership, and maintaining accountability.
+
+I designed a connected enterprise workspace built around one shared task collection, with personal work, team coordination, projects, and activity history offering different perspectives on the same system. My design process spans problem framing, information architecture, role-based interactions, responsive prototyping, and manual scenario testing.
+
+A critical ownership defect emerged when a former assignee could still change a reassigned task's status. A focused interaction correction restricted editing and rejected unauthorized saving in the tested prototype scenario. Subsequent user-reported manual regression checks supported activity integrity and current-assignee editing.
+
+The project demonstrates an evidence-grounded approach to designing complex operational workflows. It uses synthetic data; formal usability outcomes, production authorization, and business impact remain unverified.
+
+[Explore the case-study presentation](#case-study-presentation) · [Review the design and verification evidence](docs/SPRINT_03_BLOCKER_RESOLUTION.md)
+
 ## The problem
 
 A shared board can show progress without clarifying what happens when a task is blocked, reassigned, or updated by a team lead. WorkAtlas frames four design concerns: **visibility, ownership, intervention, and accountability**. This framing is a design hypothesis, **not a finding from formal user research**.
